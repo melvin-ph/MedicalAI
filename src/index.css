@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "../css/design-system.css";
+@import "../css/layout.css";
+@import "../css/components.css";
+@import "../css/sections.css";
+
+:root {
+  font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  color: #F8FAFC;
+  background: #0a0e17;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0a0e17;
+}
+
+.ws-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #0a0e17;
+}
+
+.ws-app-shell {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.ws-page {
+  padding: 24px;
+  min-height: calc(100vh - 112px);
+}
+
+.ws-page-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.ws-page-title h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.ws-page-content {
+  display: grid;
+  gap: 20px;
+}
+
+.ws-workstation-center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.ws-workstation-center .ws-toolbar {
+  flex-shrink: 0;
+}
+
+.ws-viewports {
+  min-height: 0;
+}
+
+.ws-viewports .ws-viewport {
+  min-height: 220px;
+}
+
+.ws-page-panel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 16px;
+}
+
+.ws-page-panel h2 {
+  margin-top: 0;
+}
+
+.ws-page-panel p {
+  line-height: 1.6;
+}
+
+.ws-page-panel .ws-page-badge {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(59, 130, 246, 0.12);
+  color: #bfdbfe;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.ws-page-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+}
