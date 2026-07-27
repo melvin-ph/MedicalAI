@@ -23,3 +23,4 @@ export const FollowUpPage: React.FC = () => (
       </div>
     </div>
   </section>
+);

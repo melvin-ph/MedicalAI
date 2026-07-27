@@ -23,3 +23,4 @@ export const StudiesPage: React.FC = () => (
       </div>
     </div>
   </section>
+);

@@ -23,3 +23,4 @@ export const DoseAnalysisPage: React.FC = () => (
       </div>
     </div>
   </section>
+);

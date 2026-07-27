@@ -23,3 +23,4 @@ export const PatientsPage: React.FC = () => (
       </div>
     </div>
   </section>
+);

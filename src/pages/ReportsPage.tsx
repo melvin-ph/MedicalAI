@@ -23,3 +23,4 @@ export const ReportsPage: React.FC = () => (
       </div>
     </div>
   </section>
+);

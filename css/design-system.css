@@ -1,68 +1,62 @@
 /* ============================================================
-   AMAP Design System — Autonomous Medical AI Platform
-   Premium Medical Dark Theme
+   Clinical Oncology Workstation — Design System
+   Enterprise-grade dark theme for medical imaging workstation
    ============================================================ */
 
 /* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 /* --- CSS Custom Properties (Design Tokens) --- */
 :root {
-  /* Backgrounds */
-  --bg-deepest:    #0B1220;
-  --bg-deep:       #111827;
-  --bg-card:       #1E293B;
-  --bg-card-hover: #263548;
-  --bg-elevated:   #1a2436;
-  --bg-glass:      rgba(30, 41, 59, 0.55);
-  --bg-glass-heavy:rgba(30, 41, 59, 0.80);
+  /* Backgrounds — Deep clinical dark */
+  --bg-app:         #0a0e17;
+  --bg-header:      #0d1117;
+  --bg-toolbar:     #111820;
+  --bg-panel:       #0f1319;
+  --bg-panel-section: #131923;
+  --bg-viewport:    #000000;
+  --bg-viewport-border: #1a2030;
+  --bg-input:       #0d1117;
+  --bg-hover:       rgba(255, 255, 255, 0.04);
+  --bg-active:      rgba(99, 130, 255, 0.08);
 
   /* Accent / Brand */
-  --accent:        #2563EB;
-  --accent-mid:    #3B82F6;
-  --accent-light:  #60A5FA;
-  --accent-glow:   rgba(37, 99, 235, 0.35);
-  --accent-subtle: rgba(37, 99, 235, 0.12);
+  --accent:         #6382ff;
+  --accent-dim:     #4a62cc;
+  --accent-subtle:  rgba(99, 130, 255, 0.10);
 
-  /* Semantic */
-  --success:       #10B981;
-  --success-glow:  rgba(16, 185, 129, 0.25);
-  --warning:       #F59E0B;
-  --warning-glow:  rgba(245, 158, 11, 0.25);
-  --danger:        #EF4444;
-  --danger-glow:   rgba(239, 68, 68, 0.25);
-  --info:          #06B6D4;
-  --purple:        #8B5CF6;
+  /* Semantic — Clinical */
+  --color-gtv:      #EF4444;
+  --color-ctv:      #F59E0B;
+  --color-ptv:      #10B981;
+  --success:        #10B981;
+  --warning:        #F59E0B;
+  --danger:         #EF4444;
+  --info:           #06B6D4;
 
   /* Text */
-  --text:          #F8FAFC;
-  --text-secondary:#CBD5E1;
-  --text-muted:    #94A3B8;
-  --text-dim:      #64748B;
-  --text-accent:   #60A5FA;
+  --text-primary:   #e4e8ef;
+  --text-secondary: #9ca3b4;
+  --text-dim:       #5c6370;
+  --text-accent:    #6382ff;
+  --text-bright:    #ffffff;
 
   /* Borders */
-  --border:        rgba(148, 163, 184, 0.10);
-  --border-accent: rgba(37, 99, 235, 0.30);
-  --border-hover:  rgba(148, 163, 184, 0.20);
+  --border:         rgba(255, 255, 255, 0.06);
+  --border-panel:   rgba(255, 255, 255, 0.08);
+  --border-active:  rgba(99, 130, 255, 0.30);
 
-  /* Shadows */
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
-  --shadow-md:     0 4px 12px rgba(0,0,0,0.35), 0 2px 4px rgba(0,0,0,0.2);
-  --shadow-lg:     0 10px 40px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.25);
-  --shadow-xl:     0 20px 60px rgba(0,0,0,0.5), 0 8px 24px rgba(0,0,0,0.3);
-  --shadow-glow:   0 0 30px rgba(37, 99, 235, 0.15), 0 0 60px rgba(37, 99, 235, 0.05);
-  --shadow-card:   0 4px 24px rgba(0,0,0,0.3), 0 1px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.03);
+  /* Shadows — Minimal */
+  --shadow-sm:      0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-panel:   0 0 0 1px var(--border-panel);
 
-  /* Radii */
-  --radius-sm:     8px;
-  --radius-md:     12px;
-  --radius-lg:     16px;
-  --radius-xl:     20px;
-  --radius-2xl:    24px;
-  --radius-full:   9999px;
+  /* Radii — Sharp, professional */
+  --radius-xs:      2px;
+  --radius-sm:      4px;
+  --radius-md:      6px;
+  --radius-lg:      8px;
 
-  /* Spacing scale */
+  /* Spacing */
   --space-1:  4px;
   --space-2:  8px;
   --space-3:  12px;
@@ -70,54 +64,34 @@
   --space-5:  20px;
   --space-6:  24px;
   --space-8:  32px;
-  --space-10: 40px;
-  --space-12: 48px;
-  --space-16: 64px;
 
   /* Typography */
-  --font-family: 'Inter', -apple-system, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
-  --font-mono: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+  --font-family: 'Inter', -apple-system, 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'SF Mono', 'Consolas', 'Fira Code', monospace;
 
-  --fs-xs:    0.6875rem;   /* 11px */
-  --fs-sm:    0.75rem;     /* 12px */
-  --fs-base:  0.875rem;    /* 14px */
-  --fs-md:    1rem;        /* 16px */
-  --fs-lg:    1.125rem;    /* 18px */
-  --fs-xl:    1.25rem;     /* 20px */
-  --fs-2xl:   1.5rem;      /* 24px */
-  --fs-3xl:   1.875rem;    /* 30px */
-  --fs-4xl:   2.25rem;     /* 36px */
+  --fs-2xs:   0.625rem;   /* 10px */
+  --fs-xs:    0.6875rem;  /* 11px */
+  --fs-sm:    0.75rem;    /* 12px */
+  --fs-base:  0.8125rem;  /* 13px */
+  --fs-md:    0.875rem;   /* 14px */
+  --fs-lg:    1rem;       /* 16px */
+  --fs-xl:    1.125rem;   /* 18px */
 
-  --fw-light:    300;
   --fw-normal:   400;
   --fw-medium:   500;
   --fw-semibold: 600;
   --fw-bold:     700;
-  --fw-black:    900;
-
-  --lh-tight:    1.2;
-  --lh-normal:   1.5;
-  --lh-relaxed:  1.7;
 
   /* Transitions */
-  --transition-fast:   150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base:   250ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow:   400ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-spring: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast:  100ms ease;
+  --transition-base:  200ms ease;
 
   /* Layout */
-  --nav-height:     64px;
-  --sidebar-width:  260px;
-  --sidebar-collapsed: 72px;
-  --content-max:    1800px;
-
-  /* Z-index scale */
-  --z-base:      1;
-  --z-dropdown:  100;
-  --z-sticky:    200;
-  --z-overlay:   300;
-  --z-modal:     400;
-  --z-toast:     500;
+  --header-height:    48px;
+  --toolbar-height:   40px;
+  --left-panel-width: 228px;
+  --right-panel-width: 260px;
+  --viewport-gap:     2px;
 }
 
 /* --- Reset & Base --- */
@@ -134,60 +108,54 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-family);
   font-size: var(--fs-base);
   font-weight: var(--fw-normal);
-  line-height: var(--lh-normal);
-  color: var(--text);
-  background: var(--bg-deepest);
-  overflow-x: hidden;
-  min-height: 100vh;
+  line-height: 1.4;
+  color: var(--text-primary);
+  background: var(--bg-app);
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  user-select: none;
 }
 
-/* Scrollbar */
+/* Scrollbar — Thin, dark */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--text-dim);
-  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-muted);
+  background: rgba(255, 255, 255, 0.2);
 }
 
-/* Selection */
 ::selection {
   background: var(--accent);
   color: white;
 }
 
-/* Links */
 a {
-  color: var(--accent-light);
+  color: var(--text-accent);
   text-decoration: none;
-  transition: color var(--transition-fast);
 }
-a:hover { color: var(--accent-mid); }
 
-/* Images */
 img {
   max-width: 100%;
   display: block;
 }
 
-/* Lists */
 ul, ol { list-style: none; }
 
-/* Buttons base */
 button {
   font-family: inherit;
   cursor: pointer;
@@ -198,7 +166,6 @@ button {
   font-size: inherit;
 }
 
-/* Input base */
 input, textarea, select {
   font-family: inherit;
   font-size: inherit;
@@ -208,136 +175,38 @@ input, textarea, select {
   outline: none;
 }
 
-/* --- Typography Classes --- */
-.text-xs    { font-size: var(--fs-xs); }
-.text-sm    { font-size: var(--fs-sm); }
-.text-base  { font-size: var(--fs-base); }
-.text-md    { font-size: var(--fs-md); }
-.text-lg    { font-size: var(--fs-lg); }
-.text-xl    { font-size: var(--fs-xl); }
-.text-2xl   { font-size: var(--fs-2xl); }
-.text-3xl   { font-size: var(--fs-3xl); }
-.text-4xl   { font-size: var(--fs-4xl); }
-
-.font-light     { font-weight: var(--fw-light); }
-.font-normal    { font-weight: var(--fw-normal); }
-.font-medium    { font-weight: var(--fw-medium); }
-.font-semibold  { font-weight: var(--fw-semibold); }
-.font-bold      { font-weight: var(--fw-bold); }
-
-.text-muted     { color: var(--text-muted); }
-.text-secondary { color: var(--text-secondary); }
-.text-accent    { color: var(--accent-light); }
-.text-success   { color: var(--success); }
-.text-warning   { color: var(--warning); }
-.text-danger    { color: var(--danger); }
-.text-mono      { font-family: var(--font-mono); }
-
-.leading-tight   { line-height: var(--lh-tight); }
-.leading-normal  { line-height: var(--lh-normal); }
-.leading-relaxed { line-height: var(--lh-relaxed); }
-
-.uppercase { text-transform: uppercase; letter-spacing: 0.08em; }
-.tracking-wide { letter-spacing: 0.04em; }
-
 /* --- Utility Classes --- */
 .flex { display: flex; }
 .flex-col { flex-direction: column; }
 .items-center { align-items: center; }
-.items-start { align-items: flex-start; }
-.items-end { align-items: flex-end; }
-.justify-center { justify-content: center; }
 .justify-between { justify-content: space-between; }
-.justify-end { justify-content: flex-end; }
-.flex-wrap { flex-wrap: wrap; }
-.flex-1 { flex: 1; }
 .gap-1 { gap: var(--space-1); }
 .gap-2 { gap: var(--space-2); }
 .gap-3 { gap: var(--space-3); }
 .gap-4 { gap: var(--space-4); }
-.gap-5 { gap: var(--space-5); }
-.gap-6 { gap: var(--space-6); }
-.gap-8 { gap: var(--space-8); }
+.text-xs { font-size: var(--fs-xs); }
+.text-sm { font-size: var(--fs-sm); }
+.font-medium { font-weight: var(--fw-medium); }
+.font-semibold { font-weight: var(--fw-semibold); }
+.font-bold { font-weight: var(--fw-bold); }
+.text-dim { color: var(--text-dim); }
+.text-secondary { color: var(--text-secondary); }
+.uppercase { text-transform: uppercase; letter-spacing: 0.08em; }
 
-.grid { display: grid; }
-
-.relative { position: relative; }
-.absolute { position: absolute; }
-.overflow-hidden { overflow: hidden; }
-.truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
-
-/* --- Animations --- */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
+/* --- Animations (kept minimal for workstation) --- */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
 }
-@keyframes slideInLeft {
-  from { opacity: 0; transform: translateX(-20px); }
-  to   { opacity: 1; transform: translateX(0); }
-}
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(20px); }
-  to   { opacity: 1; transform: translateX(0); }
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
 @keyframes glow {
-  0%, 100% { box-shadow: 0 0 8px var(--accent-glow); }
-  50%      { box-shadow: 0 0 24px var(--accent-glow), 0 0 48px rgba(37,99,235,0.1); }
+  0%, 100% { box-shadow: 0 0 4px var(--accent); }
+  50%      { box-shadow: 0 0 12px var(--accent); }
 }
-@keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
-}
-@keyframes countUp {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes flowPulse {
-  0%   { opacity: 0.4; transform: scale(0.95); }
-  50%  { opacity: 1;   transform: scale(1.05); }
-  100% { opacity: 0.4; transform: scale(0.95); }
-}
-@keyframes dashFlow {
-  to { stroke-dashoffset: 0; }
-}
-@keyframes borderGlow {
-  0%, 100% { border-color: rgba(37, 99, 235, 0.2); }
-  50%      { border-color: rgba(37, 99, 235, 0.5); }
-}
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50%      { transform: translateY(-6px); }
-}
-@keyframes ripple {
-  0%   { transform: scale(0.8); opacity: 1; }
-  100% { transform: scale(2.4); opacity: 0; }
-}
-
-.animate-fade-in     { animation: fadeIn 0.6s ease-out both; }
-.animate-fade-in-up  { animation: fadeInUp 0.6s ease-out both; }
-.animate-slide-left  { animation: slideInLeft 0.5s ease-out both; }
-.animate-slide-right { animation: slideInRight 0.5s ease-out both; }
-.animate-pulse       { animation: pulse 2s ease-in-out infinite; }
-.animate-glow        { animation: glow 3s ease-in-out infinite; }
-.animate-float       { animation: float 4s ease-in-out infinite; }
-
-/* Stagger delays */
-.delay-1 { animation-delay: 0.05s; }
-.delay-2 { animation-delay: 0.10s; }
-.delay-3 { animation-delay: 0.15s; }
-.delay-4 { animation-delay: 0.20s; }
-.delay-5 { animation-delay: 0.25s; }
-.delay-6 { animation-delay: 0.30s; }
-.delay-7 { animation-delay: 0.35s; }
-.delay-8 { animation-delay: 0.40s; }
